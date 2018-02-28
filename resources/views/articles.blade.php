@@ -16,13 +16,15 @@
             <section class="content content-light">
                 <div class="container">
                     <ul class="docs-nav">
-                        <li><strong>簡介</strong></li>
-                        <li><a href="#welcome" class="cc-active">前言</a></li>
-                        <li><a href="#benefits" class="cc-active">文件說明</a></li>
+                        <li><strong>系統簡介</strong></li>
+                        <li><a href="#Preface" class="cc-active">前言</a></li>
+                        <li><a href="#benefits" class="cc-active">應用價值</a></li>
+                        <li class="separator"></li>
+                        <li><strong>案例說明</strong></li>
+                        <li><a href="#features" class="cc-active">文件</a></li>
+                        <li><a href="#license" class="cc-active">BOM表</a></li>
                         <li class="separator"></li>
                         <li><strong>ERP 前置基本資料</strong></li>
-                        <li><a href="#features" class="cc-active">Features</a></li>
-                        <li><a href="#license" class="cc-active">License</a></li>
                         <li><a href="#view_type" class="cc-active">步驟1 - 共用參數設定</a></li>
                         <li><a href="#animation_style" class="cc-active">步驟2 - 幣別匯率建立</a></li>
                         <li><a href="#bars_text" class="cc-active">步驟3 - 生產線資料建立</a></li>
@@ -41,34 +43,29 @@
                         <li><a href="#bar_colors" class="cc-active">步驟7 - 產品途程資料建立</a></li>
                     </ul>
                     <div class="docs-content">
-                        <h2> Getting Started</h2>
-                        <h3 id="welcome"> Welcome</h3>
-                        <p> Are you listening to your customers?</p>
+                        <h2> --系統簡介--</h2>
+                        <h3 id="Preface"> 前言</h3>
+                        <p> 你知道SFT這套系統的功用嗎?</p>
 
-                        <p> As they say: You cannot improve what you cannot measure; but the paradox is you
-                            cannot measure everything – happiness, hatred, anger… but you can measure customer
-                            satisfaction. Yes, you can measure customer satisfaction by analyzing likes and
-                            dislikes of your customers. You can gauge popularity of your website or products.
-                            You can also:</p>
+                        <p> SFT可以簡單定義為企業的「即時生產資訊追蹤系統」，提供企業自接單、投料、製造、外包、至完工入庫，
+                            全程掌握生產資訊，藉以緊密串接現場製程與ERP作業，落實企業管理循環。其簡介如下:</p>
                         <ul>
-                            <li>See how many visitors like the new design of your website or logo</li>
-                            <li>Analyze what your readers want to see on your blog</li>
-                            <li>Understand how helpful the content on your support forum or website is</li>
-                            <li>Know the latest trends and user’s opinion before launching a new product or service</li>
+                            <li>Java技術，提供Web介面，簡化系統資源與使用，管理無距離。</li>
+                            <li>與Workflow ERP緊密整合，減少錯誤 及避免重工。</li>
+                            <li>生產現場異常監控，問題可即時反應。</li>
+                            <li>生產現場資訊即時回饋並追蹤。</li>
                         </ul>
-                        <p> Opineo allows you to do all of this and much more without signing up for an account
-                            or hire an expert. This DIY tool enables you to listen to your customers’ voice
-                            easily and instantly. All you have to do is go online, design your widget and place
-                            it on your website. </p>
-                        <h3 id="benefits"> Benefits</h3>
+                        <p>企業成功案例中，透過資訊化系統使製造現場即時透明，掌控調度及改善管理事半功倍；
+                            SFT系統讓生產進度透明化，可即時掌控良品數量、生產工時及完工比率，目前訂單達交率及入庫準時度更提高到80%、提升訂單達交速度，
+                            同時滿足訂單如期達交及降低庫存的高挑戰、使用SFT系統檢視營運細節，即時警示生產異常狀態。更多客戶應用價值。 </p>
+                        <h3 id="benefits"> 應用價值</h3>
                         <ul>
-                            <li>Use Opineo to conduct pre-release surveys before launching new products or services</li>
-                            <li>Analyze new trends in the industry</li>
-                            <li>Run crowd-sourced campaigns with Opineo to mature new ideas, website designs or
-                                logos</li>
-                            <li>Conduct popularity surveys with free Opineo widget</li>
-                            <li>Create and host polling surveys with Opineo</li>
+                            <li style="color: brown;">邁向工業 4.0 製造現場管理解決方案。</li>
+                            <li style="color: brown;">穩建邁向智慧工廠，提升智造競爭力。</li>
+                            <li style="color: brown;">工廠管理第一步 現場透明化。</li>
                         </ul>
+<p>
+                        <h2> --案例說明--</h2>
                         <h3 id="features"> Features</h3>
                         <ul>
                             <li>Facility to customize to match your website theme</li>

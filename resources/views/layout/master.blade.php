@@ -6,10 +6,10 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- CSS Files -->
-        <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="plugin/font-awesome/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="plugin/animate.min.css" />
+        <link rel="stylesheet" href="/plugin/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="stylesheet" href="/plugin/animate.min.css" />
 
         @yield('css_link')
 
@@ -49,15 +49,15 @@
         @include('layout.partial.footer')
 
         <!-- JavaScript Files -->
-        <script src="plugin/jquery-1.10.2.min.js"></script>
-        <script src="plugin/bootstrap/js/bootstrap.min.js"></script>
-        <script src="plugin/jquery.cuteTime.min.js"></script>
-        <script src="script/script.js"></script>
+        <script src="/plugin/jquery-1.10.2.min.js"></script>
+        <script src="/plugin/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/plugin/jquery.cuteTime.min.js"></script>
+        <script src="/script/script.js"></script>
         <!-- / JavaScript Files -->
 
-        <script src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/prettify/prettify.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/prettify/prettify.js"></script>
         <script src="https://cdn.bootcss.com/prettify/r298/run_prettify.js"></script>
-        <script src="js/layout.js"></script>
+        <script src="/js/layout.js"></script>
     </body>
 </html>

@@ -22,7 +22,7 @@
                     <h4>Latest blogpostings</h4>
                     <ul class="media-list">
                         <li class="media">
-                            <a class="pull-left" href="blog-post.htm"><img class="media-object img-rounded" src="img/64x64.gif" alt="author" /></a>
+                            <a class="pull-left" href="blog-post.htm"><img class="media-object img-rounded" src="/img/64x64.gif" alt="author" /></a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="blog-post.htm">Stet clita kasd</a></h5>
                                 <p>Lubergren, no sea...</p>
@@ -30,7 +30,7 @@
                             </div>
                         </li>
                         <li class="media">
-                            <a class="pull-left" href="blog-post.htm"><img class="media-object img-rounded" src="img/64x64.gif" alt="author" /></a>
+                            <a class="pull-left" href="blog-post.htm"><img class="media-object img-rounded" src="/img/64x64.gif" alt="author" /></a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="blog-post.htm">Stet clita kasd</a></h5>
                                 <p>Takimata sanctus est...</p>

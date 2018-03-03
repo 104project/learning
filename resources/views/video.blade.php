@@ -8,18 +8,16 @@
 <section class="content content-light  video-film">
     <div class="container">
         <!-- Video film view - center -->
-        <div class="row">
+        <div class="row" style="margin: 0 auto;">
             <div class="col-md-8">
                 <article>
                     <!-- Video film - player -->
-                    <div  style="border-radius: 20px;width:616px;margin:0 auto;overflow:hidden;">
-                        <iframe width="616.66" height="350" src="https://www.youtube.com/embed/go6q_ZKRnvE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    <div  style="margin:0 auto;overflow:hidden;">
+                        <iframe  style="border-radius: 16px; margin:0 auto;" width="700" height="400"  src="https://www.youtube.com/embed/go6q_ZKRnvE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 
                         </iframe>
 
                     </div>
-
-
 
                     <div class="video-content">
                         <p>以生產「蛋黃酥禮盒」為案例，總共分成三條生產線。裡面含有BOM表介紹、產品製程說明。</p>
@@ -54,8 +52,7 @@
                     </section>
                 </article>
             </div>
-            <aside class="col-md-4" style="
-    margin-top: 23px;">
+            <aside class="col-md-4" >
 
                 <p class="video-params">
                     Author： <b>Jing Ru Sun</b> <br />

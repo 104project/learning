@@ -10,19 +10,19 @@
                 <a href="videos-list.htm"><i class="fa fa-th-list"></i> 清單排序</a>
             </div>
             <div class="filter">
-                <a href="#" class="btn btn-theme navbar-btn btn-orange">所有影片</a> &nbsp;
-                <a href="#" class="btn btn-theme navbar-btn btn-lightblue">ERP</a>
-                <a href="#" class="btn btn-theme navbar-btn btn-lightblue">SFT</a>
-                <a href="#" class="btn btn-theme navbar-btn btn-lightblue">ERP整合SFT</a>
+                <a href="#" class="btn btn-theme btn-neworange">所有影片</a> &nbsp;
+                <a href="#" class="btn btn-theme btn-newgreen">ERP</a>
+                <a href="#" class="btn btn-theme btn-newgreen">SFT</a>
+                <a href="#" class="btn btn-theme btn-newgreen">ERP整合SFT</a>
             </div>
 
             <hr class="invisible" />
 
             <div class="row">
                 <article class="col-md-4 video-item">
-                    <a href="video.htm" class="video-prev video-prev-small">
-                        <img  width="294" height="200" src='http://img.youtube.com/vi/go6q_ZKRnvE/maxresdefault.jpg'></a>
-                    <h3 class="video-title"><a href="video.htm">[蛋黃酥禮盒教學案例] 生產線資料建立作業</a></h3>
+                    <a href="/test3" class="video-prev video-prev-small">
+                        <img  width="100%" height="100%" src='http://img.youtube.com/vi/go6q_ZKRnvE/maxresdefault.jpg'></a>
+                    <h3 class="video-title"><a href="/test3">[蛋黃酥禮盒教學案例] 生產線資料建立作業</a></h3>
                     <div class="row video-params">
                         <div class="col-md-8">
                             Author: <b>Jing Ru Sun</b>

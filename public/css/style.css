@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6, ul, li, p, a, table { }
 a {color:#F97307; text-decoration:none; }
 a:hover {color:#F97307; text-decoration:underline; }
 
-@media (min-width:1200px) {.container {width:970px; }}
+@media (min-width:1200px) {.container { }}
 
  /* Blue box */
 /* -------- */
@@ -89,7 +89,7 @@ ul.list-special li {color:#8B8B8B; }
 
 /* Videos - film view */
 .video-film { }
-.video-film .video-content {color:#8B8B8B; }
+.video-film .video-content {    }
 .video-film .video-params {line-height:inherit; }
 .video-film .related { }
 .video-film .related h2 {font-size:18px; color:#565656; text-transform:uppercase; }
@@ -156,15 +156,23 @@ form.search-blog a:hover i.fa {color:#F97307; }
 
  /* Buttons */
 /* ------- */
-.btn {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif !important; font-weight:bold; text-transform:uppercase; border-width:0; transition:all 0.25s ease 0s; }
+.btn { font-weight:bold; text-transform:uppercase; border-width:0; transition:all 0.25s ease 0s; }
 .btn + .btn {margin-left:20px; }
 .btn-theme {padding:16px 38px; box-shadow:0 -4px 0 rgba(0, 0, 0, 0.16) inset; } /* theme custom style */
 .btn-default {background-color:#FFF; border-color:#CCC; color:#333; }
 .btn-orange {background-color:#F97307; color:#F8F8F8; }
+.btn-neworange{background-color: #F97307;
+    color: #F8F8F8;
+    font-size: 15px;padding: 10px 20px;}
+.btn-newgreen{background-color: #65BE3E;
+    color: #F8F8F8;
+    font-size: 15px;padding: 10px 20px;}
 .btn-orange:hover, .btn-orange:focus {background-color:#C95E08; color:#F8F8F8; }
+.btn-neworange:hover, .btn-orange:focus {background-color:#C95E08; color:#F8F8F8; }
 .btn-green {background-color:#65BE3E; color:#F8F8F8; }
 .btn-green:hover, .btn-green:focus {background-color:#498E2B; color:#F8F8F8; }
-.btn-lightblue {background-color:#DAE5F7; color:#565656; }
+.btn-newgreen:hover, .btn-green:focus {background-color:#498E2B; color:#F8F8F8; }
+.btn-lightblue {    background-color: #65BE3E; color:white; }
 .btn-lightblue:hover, .btn-lightblue:focus {background-color:#6E7D8D; color:#F8F8F8; }
 .btn-gray, .btn-social.btn-gray, 
 .btn-social.btn-disable, .btn-social.btn-disable:hover, .btn-social.btn-disable:focus {background-color:#C9C9C9; color:#F8F8F8; }

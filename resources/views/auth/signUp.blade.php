@@ -8,7 +8,7 @@
 
 
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 30px;">
             <div class="col-md-12">
                 <form action="/user/auth/sign-up" method="post">
                     <div class="form-group">
@@ -51,7 +51,9 @@
                     </div>
 
                     <button type="submit" class="btn btn-success">註冊</button>
-
+                    <a href="/user/auth/facebook-sign-in" class="btn btn-lg btn-primary btn-block">Facebook</a>
+                    <a href="/" class="btn btn-lg btn-danger btn-block">Google</a>
+                    <a href="/" class="btn btn-lg btn-primary btn-block">GitHUb</a>
                     {{-- CSRF 欄位--}}
                     {{ csrf_field() }}
                 </form>

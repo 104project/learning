@@ -24,6 +24,10 @@ Route::group(['prefix' => 'user'], function(){
         Route::get('/sign-in', 'UserAuthController@signInPage');
         Route::post('/sign-in', 'UserAuthController@signInProcess');
         Route::get('/sign-out', 'UserAuthController@signOut');
+        // Facebook 登入
+        Route::get('/facebook-sign-in', 'UserAuthController@facebookSignInProcess');
+        // Facebook 登入重新導向授權資料處理
+        Route::get('/facebook-sign-in-callback', 'UserAuthController@facebookSignInCallbackProcess');
     });
 });
 

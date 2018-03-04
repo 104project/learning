@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse">
         <div class="navbar-right menu-main">
             <ul class="nav navbar-nav">
-                <li class="dropdown active">
+                    <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>首頁</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php">Home, version 1</a></li>
@@ -25,11 +25,11 @@
                     <ul class="dropdown-menu">
                         <li><a href="categories.htm">Categories of video</a></li>
                         <li><a href="videos-list.htm">Video list</a></li>
-                        <li><a href="videos-grid.htm">Video list (grid)</a></li>
+                        <li><a href="/test2">Video list (grid)</a></li>
                         <li><a href="video.htm">Video film detail</a></li>
                     </ul>
                 </li>
-                <li><a href="articles.php"><span>教學案例</span></a></li>
+                <li><a href="/test"><span>教學案例</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>部落格</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -39,8 +39,11 @@
                 </li>
                 <li><a href="contact.htm"><span>Contact us</span></a></li>
             </ul>
-            <a class="btn btn-theme navbar-btn btn-default sign-in" href="#">Sign in</a>
-            <a class="btn btn-theme navbar-btn btn-orange  sign-up" href="register.htm">Sign up</a>
+            <a style="margin: 10px; font-weight: 500;" class="btn btn-default" href="/user/auth/sign-up">註冊</a>
+            <a style="font-weight: 500;" class="btn btn-orange" href="/user/auth/sign-in">登入</a>
+
+
+
         </div>
     </div>
 </nav>

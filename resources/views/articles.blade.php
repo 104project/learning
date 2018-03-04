@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    <div class="wrapper">
+    <div class="wrapper" style="background-color: ghostwhite;">
         <section>
             <section class="content content-light">
                 <div class="container">
@@ -43,8 +43,8 @@
                         <li><a href="#bar_colors" class="cc-active">步驟7 - 產品途程資料建立</a></li>
                     </ul>
                     <div class="docs-content">
-                        <h2> --系統簡介--</h2>
-                        <h3 id="Preface"> 前言</h3>
+                        <h2> -- 系統簡介 --</h2>
+                        <h3 id="Preface"> # 前言</h3>
                         <p> 你知道SFT這套系統的功用嗎?</p>
 
                         <p> SFT可以簡單定義為企業的「即時生產資訊追蹤系統」，提供企業自接單、投料、製造、外包、至完工入庫，
@@ -58,15 +58,15 @@
                         <p>企業成功案例中，透過資訊化系統使製造現場即時透明，掌控調度及改善管理事半功倍；
                             SFT系統讓生產進度透明化，可即時掌控良品數量、生產工時及完工比率，目前訂單達交率及入庫準時度更提高到80%、提升訂單達交速度，
                             同時滿足訂單如期達交及降低庫存的高挑戰、使用SFT系統檢視營運細節，即時警示生產異常狀態。更多客戶應用價值。 </p>
-                        <h3 id="benefits"> 應用價值</h3>
+                        <h3 id="benefits"> # 應用價值</h3>
                         <ul>
                             <li style="color: brown;">邁向工業 4.0 製造現場管理解決方案。</li>
                             <li style="color: brown;">穩建邁向智慧工廠，提升智造競爭力。</li>
                             <li style="color: brown;">工廠管理第一步 現場透明化。</li>
                         </ul>
 <p>
-                        <h2> --案例說明--</h2>
-                        <h3 id="features"> Features</h3>
+                        <h2> -- 案例說明 --</h2>
+                        <h3 id="features"> # Features</h3>
                         <ul>
                             <li>Facility to customize to match your website theme</li>
                             <li>Detailed and Compact view options</li>
@@ -75,7 +75,7 @@
                             <li>Easy install; 100% integration</li>
                             <li>Facility to customize rating icons</li>
                         </ul>
-                        <h3 id="license"> License</h3>
+                        <h3 id="license"> # License</h3>
                         <p> This Feedback Collection and Polling widget is free for personal and commercial
                             projects as long as you are providing a link back to this page. If you don’t want
                             to provide a link back, simply contribute to the development and improvement of
@@ -90,7 +90,7 @@
                             <li>A reference to Opineo script file sudo nano opineo.js</li>
                         </ul>
                         <p> The following customization options are available in Opineo:</p>
-                        <h3 id="view_type"> View Type</h3>
+                        <h3 id="view_type"> #View Type</h3>
                         <ul>
                             <li>Detailed View</li>
                         </ul>

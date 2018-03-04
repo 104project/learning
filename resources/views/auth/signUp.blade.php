@@ -2,63 +2,69 @@
 
 @section('title', $title)
 
+@section('css_link')
+
+    <link rel="stylesheet" type="text/css" href="/css/auth.css">
+    <link rel="stylesheet" type="text/css" href="http:////netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+@endsection
+
 @section('content')
 
-    <div class="container">
 
+    <div class="row" style="margin-top: 0.5%; margin-bottom: 8%;">
 
+        {{-- 錯誤訊息模板元件 --}}
+        @include('components.validationErrorMessage')
 
-        <div class="row" style="margin-bottom: 30px;">
-            <div class="col-md-12">
-                <form action="/user/auth/sign-up" method="post">
-                    <div class="form-group">
-                        <label for="nickname">暱稱</label>
-                        <input type="text"
-                               class="form-control"
-                               id="nickname"
-                               name="nickname"
-                               placeholder="暱稱"
-                               value="暱稱"
-                        >
+        <div id="container" class="__registration">
+            <div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3 animated fadeInDown" id="form">
+                <div id="form-info" class="text-center">
+                    <div key="register" v-if="state == '__registration'">
+                        <h1 style="font-weight: bold;">會 員 註 冊</h1>
+                        <p>歡迎加入我們的行列，讓我們一起分享知識吧 !</p>
+                        <div class="form-group">
+                            <a class="btn btn-link" @click.prevent="goToLogin" href="/user/auth/sign-in">已經擁有帳號了嗎?</a>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">信箱</label>
-                        <input type="text"
-                               class="form-control"
-                               id="email"
-                               name="email"
-                               placeholder="信箱"
-                               value="信箱"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="password">密碼</label>
-                        <input type="password"
-                               class="form-control"
-                               id="password"
-                               name="password"
-                               placeholder="密碼"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="password">確認密碼</label>
-                        <input type="password"
-                               class="form-control"
-                               id="password"
-                               name="password_confirmation"
-                               placeholder="確認密碼"
-                        >
-                    </div>
+                </div>
 
-                    <button type="submit" class="btn btn-success">註冊</button>
-                    <a href="/user/auth/facebook-sign-in" class="btn btn-lg btn-primary btn-block">Facebook</a>
-                    <a href="/" class="btn btn-lg btn-danger btn-block">Google</a>
-                    <a href="/" class="btn btn-lg btn-primary btn-block">GitHUb</a>
-                    {{-- CSRF 欄位--}}
-                    {{ csrf_field() }}
-                </form>
+                <div id="form-slider">
+                    <form action="/user/auth/sign-up" method="post">
+                        <div class="form-group">
+                            <label for="password">暱稱 :</label>
+                            <input type="text" name="Nikename" class="form-control" placeholder="Nikename"/>
+                            <p></p>
+                            <label for="password">信箱 :</label>
+                            <input type="email" name="email" class="form-control" placeholder="E-mail"/>
+                            <p></p>
+                            <label for="password">密碼 :</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password"/>
+                            <p></p>
+                            <label for="password">確認密碼 :</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password confirmation"/>
+
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">註 冊</button>
+                            <div class="or"></div>
+                        </div>
+                        <a href="/facebook-sign-in" class="login-with-fb">
+                            <span class="icon fa fa-facebook"></span>
+                            使用  FACEBOOK  快速登入
+                        </a>
+                        <a href="/google-sign-in" class="login-with-google">
+                            <span class="icon fa fa-google-plus"></span>
+                            使用   Google   快速登入
+                        </a>
+                        {{-- CSRF 欄位--}}
+                        {{ csrf_field() }}
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
 @endsection
+

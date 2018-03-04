@@ -80,6 +80,7 @@ h3 {
 h2 {
     font-size: 22px;
     line-height: 1.2;
+    font-weight: bold;
 }
 
 h3 {
@@ -234,7 +235,7 @@ input:focus {
 
 
 .docs-nav {
-    background-color: #f5f5f5;
+    background-color: #eee;
     list-style: none;
     margin: 0 0 0 20px;
     padding: 15px 20px;
@@ -272,7 +273,7 @@ input:focus {
     .docs-nav.fixed {
         position: fixed;
         top: 49px;
-        width: 220px;
+        width: 240px;
     }
 
     .docs-nav a:hover {

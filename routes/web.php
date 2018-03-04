@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'user'], function(){
     // 使用者驗證
     Route::group(['prefix' => 'auth'], function(){
+        Route::get('/account', 'UserAuthController@accountPage');
         Route::get('/sign-up', 'UserAuthController@signUpPage');
         Route::post('/sign-up', 'UserAuthController@signUpProcess');
         Route::get('/sign-in', 'UserAuthController@signInPage');
@@ -28,6 +29,10 @@ Route::group(['prefix' => 'user'], function(){
         Route::get('/facebook-sign-in', 'UserAuthController@facebookSignInProcess');
         // Facebook 登入重新導向授權資料處理
         Route::get('/facebook-sign-in-callback', 'UserAuthController@facebookSignInCallbackProcess');
+        // Google 登入
+        Route::get('/google-sign-in', 'UserAuthController@googleSignInProcess');
+        // Google 登入重新導向授權資料處理
+        Route::get('/google-sign-in-callback', 'UserAuthController@googleSignInCallbackProcess');
     });
 });
 

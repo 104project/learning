@@ -15,6 +15,7 @@ class UserAuth extends Model
         "email",
         "password",
         "facebook_id",
+        "google_id",
         "type",
         "nickname",
     ];

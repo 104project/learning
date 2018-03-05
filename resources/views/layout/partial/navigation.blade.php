@@ -38,9 +38,24 @@
                     </ul>
                 </li>
                 <li><a href="contact.htm"><span>Contact us</span></a></li>
+                @if(session()->has('user_id'))
+                    <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #26abe2;"><span>Hi， {{ session('user_nickname')}}</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="blog-post.htm">喜愛影片</a></li>
+                            <li><a href="blog-post.htm">檢視收藏</a></li>
+                            <li><a href="/user/auth/sign-out">登出</a></li>
+                        </ul>
+                    </li>
+                @else
+                    <a style="margin: 10px; font-weight: 500;" class="btn btn-default" href="/user/auth/sign-up">註冊</a>
+                    <a style="font-weight: 500;" class="btn btn-orange" href="/user/auth/sign-in">登入</a>
+                @endif
+
             </ul>
-            <a style="margin: 10px; font-weight: 500;" class="btn btn-default" href="/user/auth/sign-up">註冊</a>
-            <a style="font-weight: 500;" class="btn btn-orange" href="/user/auth/sign-in">登入</a>
+
+
 
 
 

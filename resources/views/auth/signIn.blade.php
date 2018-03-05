@@ -43,11 +43,11 @@
                                 <button type="submit" class="btn btn-success btn-lg btn-block" >登 入</button>
                                 <div class="or"></div>
                             </div>
-                            <a href="/facebook-sign-in" class="login-with-fb">
+                            <a href="/user/auth/facebook-sign-in" class="login-with-fb">
                                 <span class="icon fa fa-facebook"></span>
                                 使用  FACEBOOK  快速登入
                             </a>
-                            <a href="/google-sign-in" class="login-with-google">
+                            <a href="/user/auth/google-sign-in" class="login-with-google">
                                 <span class="icon fa fa-google-plus"></span>
                                 使用   Google   快速登入
                             </a>

@@ -32,29 +32,29 @@
                 <div id="form-slider">
                     <form action="/user/auth/sign-up" method="post">
                         <div class="form-group">
-                            <label for="password">暱稱 :</label>
-                            <input type="text" name="Nikename" class="form-control" placeholder="Nikename"/>
+                            <label for="nickname">暱稱 :</label>
+                            <input type="text" name="nickname" class="form-control" placeholder="nickname"/>
                             <p></p>
-                            <label for="password">信箱 :</label>
+                            <label for="email">信箱 :</label>
                             <input type="email" name="email" class="form-control" placeholder="E-mail"/>
                             <p></p>
                             <label for="password">密碼 :</label>
                             <input type="password" name="password" class="form-control" placeholder="Password"/>
                             <p></p>
-                            <label for="password">確認密碼 :</label>
-                            <input type="password" name="password" class="form-control" placeholder="Password confirmation"/>
+                            <label for="password_confirmation">確認密碼 :</label>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Password confirmation"/>
 
+                            <input type="hidden" name="type" value="G">
                         </div>
-
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-lg btn-block">註 冊</button>
                             <div class="or"></div>
                         </div>
-                        <a href="/facebook-sign-in" class="login-with-fb">
+                        <a href="/user/auth/facebook-sign-in" class="login-with-fb">
                             <span class="icon fa fa-facebook"></span>
                             使用  FACEBOOK  快速登入
                         </a>
-                        <a href="/google-sign-in" class="login-with-google">
+                        <a href="/user/auth/google-sign-in" class="login-with-google">
                             <span class="icon fa fa-google-plus"></span>
                             使用   Google   快速登入
                         </a>

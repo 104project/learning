@@ -36,6 +36,13 @@ Route::group(['prefix' => 'user'], function(){
     });
 });
 
+// 影片上傳
+Route::group(['prefix' => 'video'], function(){
+
+        Route::post('/add', 'VideosController@addProcess');
+
+});
+
 
 Route::get('/test','ArticlesController@index_articles');
 

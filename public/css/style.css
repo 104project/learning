@@ -160,14 +160,15 @@ form.search-blog a:hover i.fa {color:#F97307; }
 .btn { font-weight:bold; text-transform:uppercase; border-width:0; transition:all 0.25s ease 0s; }
 .btn + .btn {}
 .btn-theme {padding:16px 38px; box-shadow:0 -4px 0 rgba(0, 0, 0, 0.16) inset; } /* theme custom style */
+.btn-newtheme {padding:16px 38px;} /* theme custom style */
 .btn-default {background-color:#FFF; border-color:#CCC; color:#333; }
 .btn-orange {background-color:#F97307; color:#F8F8F8; }
 .btn-neworange{background-color: #F97307;
     color: #F8F8F8;
-    font-size: 15px;padding: 10px 20px;}
-.btn-newgreen{background-color: #65BE3E;
+    font-size: 15px;padding: 10px 20px;line-height:14px;text-shadow: 0 -1px 0 rgba(0,0,0,.25);}
+.btn-newgreen{background-color: #5bb75b;
     color: #F8F8F8;
-    font-size: 15px;padding: 10px 20px;}
+    font-size: 15px;padding: 10px 20px;line-height:14px;text-shadow: 0 -1px 0 rgba(0,0,0,.25);}
 .btn-orange:hover, .btn-orange:focus {background-color:#C95E08; color:#F8F8F8; }
 .btn-neworange:hover, .btn-orange:focus {background-color:#C95E08; color:#F8F8F8; }
 .btn-green {background-color:#65BE3E; color:#F8F8F8; }

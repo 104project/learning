@@ -52,7 +52,7 @@
         <script src="/plugin/jquery-1.10.2.min.js"></script>
         <script src="/plugin/bootstrap/js/bootstrap.min.js"></script>
         <script src="/plugin/jquery.cuteTime.min.js"></script>
-        <script src="/script/script.js"></script>
+         <script src="/script/script.js"></script>
         <!-- / JavaScript Files -->
 
         <script src="/js/jquery.min.js"></script>

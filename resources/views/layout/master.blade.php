@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-5">
                         <ol class="breadcrumb pull-right">
-                            <li><a href="index.htm">Home</a></li>
+                            <li><a href="index.htm">Home </a></li>
                             <li class="active">{{ $title }}</li>
                         </ol>
                     </div>

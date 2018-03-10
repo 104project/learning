@@ -15,7 +15,9 @@ class Videos extends Model
         'title',
         'category',
         'author',
+        'user_id',
         'video_id',
+        'content',
         'views_num',
         'likes_num',
     ];

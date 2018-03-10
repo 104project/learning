@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 // 使用者
 Route::group(['prefix' => 'user'], function(){
@@ -38,14 +36,18 @@ Route::group(['prefix' => 'user'], function(){
 
 // 影片上傳
 Route::group(['prefix' => 'video'], function(){
-
+    Route::group(['prefix' => 'index'], function(){
+        Route::get('/', 'VideosController@video_areaPage');
+        Route::get('{category_tag}','VideosController@video_area_categoryPage');
+    });
         Route::post('/add', 'VideosController@addProcess');
-
+        Route::get('/{id}/like', 'VideosController@video_like');
+        Route::get('/{category}/{id}', 'VideosController@video');
 });
 
 
+Route::get('/','VideosController@index');
 Route::get('/test','ArticlesController@index_articles');
-
 Route::get('/test2','ArticlesController@index_video');
 
 Route::get('/test3','ArticlesController@video');

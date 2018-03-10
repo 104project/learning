@@ -21,23 +21,21 @@
                 </li>
                 <li><a href="about-us.htm"><span>關於我們</span></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>教學影片</span> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>精選頻道</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="categories.htm">Categories of video</a></li>
-                        <li><a href="videos-list.htm">Video list</a></li>
-                        <li><a href="/test2">Video list (grid)</a></li>
-                        <li><a href="video.htm">Video film detail</a></li>
+
+                        <li><a href="/video/index">所有影片</a></li>
+
+                        @foreach($Videos_Category as $videocategory)
+                        <li><a href="/video/index/{{ $videocategory->tag }}">{{ $videocategory->tag }}</a></li>
+
+                        @endforeach
+
                     </ul>
                 </li>
                 <li><a href="/test"><span>教學案例</span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>部落格</span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="blog-list.htm">Blog list</a></li>
-                        <li><a href="blog-post.htm">Blog post detail</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.htm"><span>Contact us</span></a></li>
+
+                <li><a href="contact.htm"><span>聯絡我們</span></a></li>
                 @if(session()->has('user_id'))
                     <li class="dropdown" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #26abe2;"><span>Hi， {{ session('user_nickname')}}</span> <b class="caret"></b></a>

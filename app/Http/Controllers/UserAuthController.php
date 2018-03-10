@@ -8,7 +8,7 @@ use Hash;       // 雜湊
 use App\UserAuth as User;   // 使用者 Eloquent Model
 use DB;
 use Exception;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class UserAuthController extends Controller
 {
@@ -288,7 +288,7 @@ class UserAuthController extends Controller
         return redirect()->intended('/test');
     }
 
-    // Facebook 登入重新導向授權資料處理
+    // Google 登入重新導向授權資料處理
     public function googleSignInCallbackProcess()
     {
         if (request()->error == 'access_denied') {
@@ -309,8 +309,8 @@ class UserAuthController extends Controller
         $google_id = $GoogleUser->id;
         $google_name = $GoogleUser->name;
 
-        // 取得使用者資料是否有此 Facebook id 資料
-        $User = User::where('facebook_id', $google_id)->first();
+        // 取得使用者資料是否有此 google id 資料
+        $User = User::where('google_id', $google_id)->first();
 
         if (is_null($User)) {
             // 沒有綁定 Facebook Id 的帳號，透過 Email 尋找是否有此帳號

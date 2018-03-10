@@ -17,8 +17,10 @@ class CreateVideosTable extends Migration
             $table->increments('id'); //影片編號
             $table->string('title',30); //影片標題
             $table->string('category',20); //影片分類
-            $table->string('author',20); //作者
+            $table->string('author',20); //影片作者
+            $table->string('user_id'); //影片作者id(即會員編號)
             $table->string('video_id', 40); //youtube影片ID
+            $table->string('content', 150); //影片描述內容
             $table->string('views_num'); //觀看次數
             $table->string('likes_num'); //喜愛次數
             $table->timestamps();

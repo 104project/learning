@@ -28,7 +28,7 @@
         </header>
 
         <div class="page-header">
-            <div class="container">
+            <div class="container" >
                 <div class="row">
                     <div class="col-md-7">
                         <h1>{{ $subject }}</h1>

@@ -279,9 +279,9 @@ input[type="file"].input-lg {padding:0; } /* nicer in FF */
  /* HEADER */
 /* ------ */
 header.main {padding-top:18px; background-color:#36404B; }
-header.main .navbar {margin-bottom:24px; }
-header.main nav .navbar-brand {padding:0; } /* Logo */
-header.main nav .menu-main {position:relative; top:14px; font-size:16px; }
+header.main .navbar { }
+
+header.main nav .menu-main {position:relative;  font-size:16px; }
 header.main nav .menu-main ul li a {color:#97A5B5; }
 header.main nav .menu-main ul li.active a,
 header.main nav .menu-main ul li a:hover,
@@ -296,6 +296,10 @@ header.main nav .navbar-btn {margin-left:20px; } /* Sign in/up */
 header.main nav .btn-default {background-color:#6E7D8D; border-color:#6E7D8D; color:#F8F8F8; }
 header.main nav .btn-default:hover {background-color:#5C6976; }
 
+.container{
+    padding: 0px;
+    margin: 0 auto;
+}
 /* HEADER (Home 1) */
 header.main.home-1 {height:712px; position:relative; }
 header.main.home-1 .container {height:100%; position:relative; } 

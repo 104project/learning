@@ -37,7 +37,7 @@ class VideosController extends Controller
 
     // 影片內容id對id
     public function video($category,$id){
-
+        $Videos_Category = DB::table('videocategory')->get();
         $Video = DB::table('videos')->where('id', '=', $id)->get();
         $SimilarVideos = DB::table('videos')->where('category', '=', $category)->where('id', '!=', $id)->get();
 
@@ -45,7 +45,7 @@ class VideosController extends Controller
             $subject = $subject->title;
         }
 
-        $binding = ['title' => '教學影片' , 'subject' => $subject, 'Video' => $Video , 'SimilarVideos' => $SimilarVideos];
+        $binding = ['title' => '教學影片' , 'subject' => $subject, 'Video' => $Video , 'SimilarVideos' => $SimilarVideos, 'Videos_Category' => $Videos_Category];
         // 重新導向到影片區
         return view('video', $binding);
 

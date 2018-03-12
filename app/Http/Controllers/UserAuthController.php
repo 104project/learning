@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Jobs\SendSignUpMailJob;
+use Mail;
 use Laravel\Socialite\Facades\Socialite;
 use Validator;  // 驗證器
 use Hash;       // 雜湊
 use App\UserAuth as User;   // 使用者 Eloquent Model
 use DB;
 use Exception;
-use Illuminate\Support\Facades\Mail;
 
 class UserAuthController extends Controller
 {
@@ -22,8 +24,9 @@ class UserAuthController extends Controller
 
     // 登入
     public function signInPage(){
+        $Videos_Category = DB::table('videocategory')->get();
         $binding = [
-            'title' => '會員登入' , 'subject' => '會員登入'
+            'title' => '會員登入' , 'subject' => '會員登入', 'Videos_Category' => $Videos_Category
         ];
         return view('auth.signIn', $binding);
     }
@@ -87,8 +90,9 @@ class UserAuthController extends Controller
 
     // 註冊
     public function signUpPage(){
+        $Videos_Category = DB::table('videocategory')->get();
         $binding = [
-                'title' => '會員註冊' , 'subject' => '會員註冊'
+                'title' => '會員註冊' , 'subject' => '會員註冊', 'Videos_Category' => $Videos_Category
         ];
         return view('auth.signUp', $binding);
     }
@@ -151,18 +155,9 @@ class UserAuthController extends Controller
             'email' => $input['email'],
         ];
 
-        Mail::send('email.signUpEmailNotification', $mail_binding,
-        function ($mail) use ($input){
-            //寄件人
-            $mail->to($input['email']);
-            //收件人
-            $mail->from('3a432016@gm.student.ncut.edu.tw');
-            //郵件主旨
-            $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
-        });
 
-        //SendSignUpMailJob::dispatch($mail_binding)
-        //    ->onQueue('high');
+        SendSignUpMailJob::dispatch($mail_binding)
+            ->onQueue('high');
 
         // 重新導向到登入頁
         return redirect('/user/auth/sign-in');
@@ -266,17 +261,9 @@ class UserAuthController extends Controller
                 'email' => $input['email'],
             ];
 
-            Mail::send('email.signUpEmailNotification', $mail_binding,
-            function ($mail) use ($input){
-                //寄件人
-                $mail->to($input['email']);
-                //收件人
-                $mail->from('3a432016@gm.student.ncut.edu.tw');
-                //郵件主旨
-                $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
-            });
-            //SendSignUpMailJob::dispatch($mail_binding)
-            //    ->onQueue('high');
+      
+            SendSignUpMailJob::dispatch($mail_binding)
+                ->onQueue('high');
         }
 
         // 登入會員
@@ -342,18 +329,8 @@ class UserAuthController extends Controller
                  'email' => $input['email'],
             ];
 
-            Mail::send('email.signUpEmailNotification', $mail_binding,
-            function ($mail) use ($input){
-                //寄件人
-                $mail->to($input['email']);
-                //收件人
-                $mail->from('3a432016@gm.student.ncut.edu.tw');
-                //郵件主旨
-                $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
-            });
-
-            //SendSignUpMailJob::dispatch($mail_binding)
-            //    ->onQueue('high');
+            SendSignUpMailJob::dispatch($mail_binding)
+                ->onQueue('high');
         }
 
         // 登入會員
@@ -362,6 +339,6 @@ class UserAuthController extends Controller
         session()->put('user_nickname', $User->nickname);
 
         // 重新導向到原先使用者造訪頁面，沒有嘗試造訪頁則重新導向回首頁
-        return redirect()->intended('/test');
+        return redirect()->intended('/');
     }
 }

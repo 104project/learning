@@ -151,6 +151,8 @@ a:active {
 
 
 h1 {
+    font-weight: bolder;
+
     margin: 0;
     padding: 0;
     float: left;

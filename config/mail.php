@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,6 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +54,7 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', '3a432016@gm.student.ncut.edu.tw'),
-        'name' => env('MAIL_FROM_NAME', 'NCUT_Learning'),
-    ],
+    'from' => ['address' => '3a432016@gm.student.ncut.edu.tw', 'name' => 'SendSignUpMail'],
 
     /*
     |--------------------------------------------------------------------------
@@ -111,6 +107,7 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
+    'pretend'    => false,
 
     'markdown' => [
         'theme' => 'default',
@@ -119,6 +116,7 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+
     'stream' => [
         'ssl' => [
             'allow_self_signed' => true,
@@ -126,5 +124,8 @@ return [
             'verify_peer_name' => false,
         ],
     ],
+
+
+
 
 ];

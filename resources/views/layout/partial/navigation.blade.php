@@ -6,45 +6,36 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-
-        <a class="navbar-brand"
-           style="font-family:Microsoft YaHei; padding: 12px 0px;
-                    margin-right:15px;font-size: 20px; color:  burlywood;"
-           href="/">
-            <iframe src="https://image.flaticon.com/icons/svg/167/167734.svg" width="40" height="35"
-                    style="float: left;margin-right:8px;border: unset;">
-
-            </iframe>
-            <span>ERP</span>廠區生產追蹤<br/>
-            <span style="margin-top: 1px;font-size: 15px;float: right;color:#26abe2ba;font-style: oblique;">
-
-                Learning System
-            </span>
-        </a>
-        <div class="navbar-right menu-main">
-        <ul class="nav navbar-nav">
-
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>精選頻道</span> <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-
-                    @foreach($Videos_Category as $videocategory)
-                        <li><a href="/video/index/{{ $videocategory->tag }}">{{ $videocategory->tag }}</a></li>
-                    @endforeach
-
-                </ul>
-            </li>
-            <li><a href="/test"><span>教學案例</span></a></li>
-
-            <li><a href="contact.htm"><span>聯絡我們</span></a></li>
-        </ul>
-        </div>
+        <a class="navbar-brand" href="index.htm"><img id="logo" src="/img/logo.png" alt="eLearn" /></a>
     </div>
     <div class="collapse navbar-collapse">
         <div class="navbar-right menu-main">
             <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>首頁</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php">Home, version 1</a></li>
+                        <li><a href="index2.htm">Home, version 2</a></li>
+                        <li><a href="index3.htm">Home, version 3</a></li><li><a href="http://www.cssmoban.com/">Home, version 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="about-us.htm"><span>關於我們</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>精選頻道</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
 
+                        <li><a href="/video/index">所有影片</a></li>
+
+                        @foreach($Videos_Category as $videocategory)
+                        <li><a href="/video/index/{{ $videocategory->tag }}">{{ $videocategory->tag }}</a></li>
+
+                        @endforeach
+
+                    </ul>
+                </li>
+                <li><a href="/test"><span>教學案例</span></a></li>
+
+                <li><a href="contact.htm"><span>聯絡我們</span></a></li>
                 @if(session()->has('user_id'))
                     <li class="dropdown" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #26abe2;"><span>Hi， {{ session('user_nickname')}}</span> <b class="caret"></b></a>

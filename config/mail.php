@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', '587'),
+    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +55,11 @@ return [
     |
     */
 
-    "from" => array(
-        "address" => "from@example.com",
-        "name" => "Example"
-    ),
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', '3a432016@gm.student.ncut.edu.tw'),
+        'name' => env('MAIL_FROM_NAME', 'NCUT_Learning'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -111,8 +112,6 @@ return [
     |
     */
 
-    'pretend' => false,
-
     'markdown' => [
         'theme' => 'default',
 
@@ -120,7 +119,6 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
-
     'stream' => [
         'ssl' => [
             'allow_self_signed' => true,
@@ -128,7 +126,5 @@ return [
             'verify_peer_name' => false,
         ],
     ],
-    
-
 
 ];

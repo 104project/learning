@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\SendSignUpMail;
-use Illuminate\Support\Facades\Mail;
 use Laravel\Socialite\Facades\Socialite;
 use Validator;  // 驗證器
 use Hash;       // 雜湊
 use App\UserAuth as User;   // 使用者 Eloquent Model
 use DB;
 use Exception;
-
+use Illuminate\Support\Facades\Mail;
 
 class UserAuthController extends Controller
 {
@@ -24,9 +22,8 @@ class UserAuthController extends Controller
 
     // 登入
     public function signInPage(){
-        $Videos_Category = DB::table('videocategory')->get();
         $binding = [
-            'title' => '會員登入' , 'subject' => '會員登入', 'Videos_Category' => $Videos_Category
+            'title' => '會員登入' , 'subject' => '會員登入'
         ];
         return view('auth.signIn', $binding);
     }
@@ -84,15 +81,14 @@ class UserAuthController extends Controller
         session()->put('user_nickname', $User->nickname);
 
         // 重新導向到原先使用者造訪頁面，沒有嘗試造訪頁則重新導向回首頁
-        return redirect()->intended('/');
+        return redirect()->intended('/test');
     }
 
 
     // 註冊
     public function signUpPage(){
-        $Videos_Category = DB::table('videocategory')->get();
         $binding = [
-                'title' => '會員註冊' , 'subject' => '會員註冊', 'Videos_Category' => $Videos_Category
+                'title' => '會員註冊' , 'subject' => '會員註冊'
         ];
         return view('auth.signUp', $binding);
     }
@@ -156,16 +152,17 @@ class UserAuthController extends Controller
         ];
 
         Mail::send('email.signUpEmailNotification', $mail_binding,
-            function ($mail) use ($mail_binding){
-                //寄件人
-                $mail->to($mail_binding['email']);
-                //收件人
-                $mail->from('3a432016@gm.student.ncut.edu.tw');
-                //郵件主旨
-                $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
-            });
+        function ($mail) use ($input){
+            //寄件人
+            $mail->to($input['email']);
+            //收件人
+            $mail->from('3a432016@gm.student.ncut.edu.tw');
+            //郵件主旨
+            $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
+        });
+
         //SendSignUpMailJob::dispatch($mail_binding)
-            //->onQueue('high');
+        //    ->onQueue('high');
 
         // 重新導向到登入頁
         return redirect('/user/auth/sign-in');
@@ -191,6 +188,19 @@ class UserAuthController extends Controller
             ->redirect();
     }
 
+    // Google 登入
+    public function googleSignInProcess()
+    {
+        $redirect_url = env('GOOGLE_CALLBACK');
+        $scopes = [
+            'https://www.googleapis.com/auth/plus.me',
+            'https://www.googleapis.com/auth/plus.profile.emails.read'
+        ];
+        return Socialite::driver('google')
+            ->scopes($scopes)
+            ->redirectUrl($redirect_url)
+            ->redirect();
+    }
 
     // Facebook 登入重新導向授權資料處理
     public function facebookSignInCallbackProcess()
@@ -257,17 +267,16 @@ class UserAuthController extends Controller
             ];
 
             Mail::send('email.signUpEmailNotification', $mail_binding,
-                function ($mail) use ($mail_binding){
-                    //寄件人
-                    $mail->to($mail_binding['email']);
-                    //收件人
-                    $mail->from('3a432016@gm.student.ncut.edu.tw');
-                    //郵件主旨
-                    $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
-                });
-      
+            function ($mail) use ($input){
+                //寄件人
+                $mail->to($input['email']);
+                //收件人
+                $mail->from('3a432016@gm.student.ncut.edu.tw');
+                //郵件主旨
+                $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
+            });
             //SendSignUpMailJob::dispatch($mail_binding)
-                //->onQueue('high');
+            //    ->onQueue('high');
         }
 
         // 登入會員
@@ -276,7 +285,83 @@ class UserAuthController extends Controller
         session()->put('user_nickname', $User->nickname);
 
         // 重新導向到原先使用者造訪頁面，沒有嘗試造訪頁則重新導向回首頁
-        return redirect()->intended('/');
+        return redirect()->intended('/test');
     }
 
+    // Google 登入重新導向授權資料處理
+    public function googleSignInCallbackProcess()
+    {
+        if (request()->error == 'access_denied') {
+            throw new Exception('授權失敗，存取錯誤');
+        }
+        // 依照網域產出重新導向連結 (來驗證是否為發出時同一 callback )
+        $redirect_url = env('GOOGLE_CALLBACK');
+        // 取得第三方使用者資料
+        $GoogleUser = Socialite::driver('google')
+            ->redirectUrl($redirect_url)->user();
+
+        $google_email = $GoogleUser->email;
+
+        if (is_null($google_email)) {
+            throw new Exception('未授權取得使用者 Email');
+        }
+        // 取得 Facebook 資料
+        $google_id = $GoogleUser->id;
+        $google_name = $GoogleUser->name;
+
+        // 取得使用者資料是否有此 google id 資料
+        $User = User::where('google_id', $google_id)->first();
+
+        if (is_null($User)) {
+            // 沒有綁定 Facebook Id 的帳號，透過 Email 尋找是否有此帳號
+            $User = User::where('email', $google_email)->first();
+            if (!is_null($User)) {
+                // 有此帳號，綁定 Facebook Id
+                $User->google_id = $google_id;
+                $User->save();
+            }
+        }
+
+        if (is_null($User)){
+            // 尚未註冊
+            $input = [
+                'email'       => $google_email,   // Email
+                'nickname'    => $google_name,    // 暱稱
+                'password'    => uniqid(),          // 隨機產生密碼
+                'google_id' => $google_id,      // Facebook ID
+                'type'        => 'G',               // 一般使用者
+            ];
+            // 密碼加密
+            $input['password'] = Hash::make($input['password']);
+            // 新增會員資料
+            $User = User::create($input);
+
+            // 寄送註冊通知信
+            $mail_binding = [
+                 'nickname' => $input['nickname'],
+                 'email' => $input['email'],
+            ];
+
+            Mail::send('email.signUpEmailNotification', $mail_binding,
+            function ($mail) use ($input){
+                //寄件人
+                $mail->to($input['email']);
+                //收件人
+                $mail->from('3a432016@gm.student.ncut.edu.tw');
+                //郵件主旨
+                $mail->subject('恭喜註冊 NCUT Learning 影片學習網 成功');
+            });
+
+            //SendSignUpMailJob::dispatch($mail_binding)
+            //    ->onQueue('high');
+        }
+
+        // 登入會員
+        // session 紀錄會員編號
+        session()->put('user_id', $User->id);
+        session()->put('user_nickname', $User->nickname);
+
+        // 重新導向到原先使用者造訪頁面，沒有嘗試造訪頁則重新導向回首頁
+        return redirect()->intended('/test');
+    }
 }

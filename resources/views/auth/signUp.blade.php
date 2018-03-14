@@ -54,7 +54,10 @@
                             <span class="icon fa fa-facebook"></span>
                             使用  FACEBOOK  快速登入
                         </a>
-
+                        <a href="/user/auth/google-sign-in" class="login-with-google">
+                            <span class="icon fa fa-google-plus"></span>
+                            使用   Google   快速登入
+                        </a>
                         {{-- CSRF 欄位--}}
                         {{ csrf_field() }}
                     </form>

@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+
 class ArticlesController extends Controller
 {
     public function index_articles()
     {
-        $Videos_Category = DB::table('videocategory')->get();
-        $binding = ['title' => '教學案例' , 'subject' => '蛋黃酥 - 案例教學 (ERP整合SFT)', 'Videos_Category' => $Videos_Category];
+        $binding = ['title' => '教學案例' , 'subject' => '蛋黃酥 - 案例教學 (ERP整合SFT)'];
         return view('articles', $binding);
     }
 

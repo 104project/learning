@@ -6,6 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+<<<<<<< HEAD
 
         <a class="navbar-brand"
            style="font-family:Microsoft YaHei; padding: 12px 0px;
@@ -21,6 +22,9 @@
                 Learning System
             </span>
         </a>
+=======
+        <a class="navbar-brand" style="font-family:Microsoft YaHei;padding: 12px 0px; margin-right:15px;font-size: 30px; color: #26abe2;" href="/">教育訓練平台</a>
+>>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
         <div class="navbar-right menu-main">
         <ul class="nav navbar-nav">
 
@@ -29,14 +33,28 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>精選頻道</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
 
+<<<<<<< HEAD
+=======
+                    <li><a href="/video/index">所有影片</a></li>
+
+>>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
                     @foreach($Videos_Category as $videocategory)
                         <li><a href="/video/index/{{ $videocategory->tag }}">{{ $videocategory->tag }}</a></li>
+                    @endforeach
+
+<<<<<<< HEAD
+                </ul>
+            </li>
+            <li><a href="/test"><span>教學案例</span></a></li>
+
+=======
                     @endforeach
 
                 </ul>
             </li>
             <li><a href="/test"><span>教學案例</span></a></li>
 
+>>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
             <li><a href="contact.htm"><span>聯絡我們</span></a></li>
         </ul>
         </div>

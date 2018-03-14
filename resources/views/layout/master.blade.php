@@ -28,11 +28,12 @@
         </header>
 
         <div class="page-header">
-            <div class="container">
+            <div class="container" >
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>{{ $subject }}</h1>
+                        <h1>{{ $subject }}@yield('subscribe')</h1>
                     </div>
+
                     <div class="col-md-5">
                         <ol class="breadcrumb pull-right">
                             <li><a href="index.htm">Home </a></li>
@@ -40,7 +41,10 @@
                         </ol>
                     </div>
                 </div>
+                @yield('category_well')
             </div>
+
+
         </div>
 
 

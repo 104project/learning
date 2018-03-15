@@ -42,7 +42,10 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'port' => env('MAIL_PORT', '587'),
+=======
+>>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
 
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +58,15 @@ return [
     |
     */
 
+<<<<<<< HEAD
     "from" => array(
         "address" => "from@example.com",
         "name" => "Example"
     ),
+=======
+    'from' => ['address' => '3a432016@gm.student.ncut.edu.tw', 'name' => 'SendSignUpMail'],
+
+>>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -110,6 +118,7 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
+    'pretend'    => false,
 
     'pretend' => false,
 
@@ -129,6 +138,9 @@ return [
         ],
     ],
     
+
+
+
 
 
 ];

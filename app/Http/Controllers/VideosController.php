@@ -62,10 +62,23 @@ class VideosController extends Controller
 
     // 影片內容id對id
     public function video($category,$id){
+
+        //取得觀看次數
+        $Video_view = DB::table('videos')->where('id', '=', $id)->get();
+        foreach ($Video_view as $view){
+            $views_num = $view->views_num;
+        }
+        //更新觀看次數(點擊後+1)
+        DB::table('videos')
+            ->where('id', $id)
+            ->update(['views_num' => $views_num+1]);
+
+        //取得影片分類+取得點擊後所對應的影片資訊+找尋相類似頻道的影片
         $Videos_Category = DB::table('videocategory')->get();
         $Video = DB::table('videos')->where('id', '=', $id)->get();
         $SimilarVideos = DB::table('videos')->where('category', '=', $category)->where('id', '!=', $id)->get();
 
+        //取得頻道標題
         foreach ($Video as $subject){
             $subject = $subject->title;
         }

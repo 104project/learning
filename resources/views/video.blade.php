@@ -6,6 +6,9 @@
 
 <!-- Video: film view -->
 <section class="content content-light  video-film" >
+
+
+
     <div class="container">
     @foreach($Video as $video)
         <!-- Video film view - center -->
@@ -56,21 +59,69 @@
             <aside class="col-md-4" >
 
                 <p class="video-params">
-                    Author： <b>{{ $video->author }}</b> <br />
-                    Date： <b>{{ $video->updated_at	 }}</b> <br />
-                    Category： <b>{{ $video->category	 }}</b> <br />
-                    Views： <b>{{ $video->views_num }}</b> <br />
-                    Likes： <b>{{ $video->likes_num	 }}</b>
+                    發佈者：<b>{{ $video->author }}</b> <br />
+                    建立日期：<b>{{ $video->updated_at	 }}</b> <br />
+                    頻道：<b>{{ $video->category	 }}</b> <br />
+                    瀏覽人數：<b>{{ $video->views_num }}</b> <br />
+                    喜愛人數：<b>{{ $Video_likes_num }}</b>
+
                 </p>
                 <!--<p class="video-description">handler has just finished his Graphic Design degree and enjoys continuing to learn from Monica and building his experience. Joey and Phoebe focus on bringing new business to the company. They have won a number of big clients recently and both also have qualifications in project management to ensure that the projects run smoothly from start to finish.</p>-->
+
+
+
                 <div class="row buttons-margin-horizontal">
-                    <div class="col-md-6 button-full">
-                        <a class="btn btn-theme btn-red" href="/video/{{$video->id}}/like"><i class="fa fa-heart"></i> Like</a>
-                    </div>
-                    <div class="col-md-6 button-full">
-                        <a class="btn btn-theme btn-orange"><i class="fa fa-plus"></i> Collect</a>
-                    </div>
+
+                    @if(count($User_Like_Video)>0)
+                        @foreach($User_Like_Video as $User_Like)
+                                @if( $User_Like->like_video_id == $video->id)
+                                    <form name="dislike" id="dislike" action="/video/{{$video->id}}/dislike" method="post">
+                                        <div class="col-md-6 button-full">
+                                            <button class="btn btn-theme btn-red" type="submit"><i class="fa fa-heart"></i> 已成為您的喜愛</button>
+                                            {{-- CSRF 欄位--}}
+                                            {{ csrf_field() }}
+                                        </div>
+                                    </form>
+                                @endif
+                        @endforeach
+                    @else
+                            <form name="like" id="like" action="/video/{{$video->id}}/like" method="post">
+                                <div class="col-md-6 button-full">
+                                <button class="btn btn-theme btn-red" type="submit"><i class="fa fa-heart-o"></i> 加入您的喜愛</button>
+                                {{-- CSRF 欄位--}}
+                                {{ csrf_field() }}
+                                </div>
+                            </form>
+
+                    @endif
+
+
+
+                    @if(count($User_Collect_Video)>0)
+                        @foreach($User_Collect_Video as $User_Collect)
+                            @if( $User_Collect->collect_video_id == $video->id)
+                                <form name="discollect" id="discollect" action="/video/{{$video->id}}/discollect" method="post">
+                                    <div class="col-md-6 button-full">
+                                        <button class="btn btn-theme btn-orange" type="submit"><i class="fa fa-check"></i> 已收藏</button>
+                                        {{-- CSRF 欄位--}}
+                                        {{ csrf_field() }}
+                                    </div>
+                                </form>
+                            @endif
+                        @endforeach
+                    @else
+                        <form name="collect" id="collect" action="/video/{{$video->id}}/collect" method="post">
+                            <div class="col-md-6 button-full">
+                                <button class="btn btn-theme btn-orange" type="submit"><i class="fa fa-plus"></i> 收藏</button>
+                                {{-- CSRF 欄位--}}
+                                {{ csrf_field() }}
+                            </div>
+
+                        </form>
+                    @endif
                 </div>
+
+
                 <p class="button-full buttons-margin-horizontal" ><a href="/video/index/{{$video->category}}" class="btn btn-theme btn-green"><i class="fa fa-arrow-circle-left"></i> 返回頻道</a></p>
 
             </aside>

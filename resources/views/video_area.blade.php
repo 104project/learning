@@ -226,7 +226,7 @@
 
                             <li><a class="val1" href="/video/index/{{session('category_tag')}}/time">依發佈時間</a></li>
                             <li><a class="val2" href="/video/index/{{session('category_tag')}}/views">依觀看人數</a></li>
-                            <li><a class="val3" href="/video/index/{{session('category_tag')}}/likes">依收藏人數</a></li>
+                            <li><a class="val3" href="/video/index/{{session('category_tag')}}/likes">依喜愛人數</a></li>
 
                     </ul>
                 </nav>

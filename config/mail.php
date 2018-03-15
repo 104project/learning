@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,10 +42,8 @@ return [
     |
     */
 
-<<<<<<< HEAD
-    'port' => env('MAIL_PORT', '587'),
-=======
->>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
+    'port' => env('MAIL_PORT', 587),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -58,15 +56,10 @@ return [
     |
     */
 
-<<<<<<< HEAD
-    "from" => array(
-        "address" => "from@example.com",
-        "name" => "Example"
-    ),
-=======
+
     'from' => ['address' => '3a432016@gm.student.ncut.edu.tw', 'name' => 'SendSignUpMail'],
 
->>>>>>> 9d2a71e84f488fc586a0afbebc70e6e1f40703d8
+
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -120,8 +113,6 @@ return [
     */
     'pretend'    => false,
 
-    'pretend' => false,
-
     'markdown' => [
         'theme' => 'default',
 
@@ -129,7 +120,6 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
-
     'stream' => [
         'ssl' => [
             'allow_self_signed' => true,
@@ -137,8 +127,6 @@ return [
             'verify_peer_name' => false,
         ],
     ],
-    
-
 
 
 

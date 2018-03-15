@@ -39,7 +39,6 @@ Route::group(['prefix' => 'video'], function(){
     Route::group(['prefix' => 'index'], function(){
         Route::get('/', 'VideosController@video_areaPage');
         Route::get('{category_tag}','VideosController@video_area_categoryPage');
-        Route::get('{category_tag}/{sort}','VideosController@video_area_sortPage'); //影片分類+排序
     });
         Route::post('/add', 'VideosController@addProcess');
         //會員新增喜愛影片 & 會員取消喜愛影片

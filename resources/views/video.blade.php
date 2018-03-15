@@ -42,7 +42,7 @@
                             @foreach($SimilarVideos as $similarVideos)
                             <article class="col-md-6  video-item">
                                 <a href="/video/{{ $similarVideos->category }}/{{ $similarVideos->id }}" class="video-prev video-prev-small">
-                                <img  width="100%" height="100%" src='http://img.youtube.com/vi/{{ $similarVideos->video_id }}/mqdefault.jpg'>
+                                <img  width="100%" height="100%" src='http://img.youtube.com/vi/{{ $similarVideos->video_id }}/maxresdefault.jpg'>
                                 </a>
                                 <h3 class="video-title" style="font-family: 微軟正黑體; height: 13%;"><a href="/test3"> {{ $similarVideos->title }}</a></h3>
 
@@ -59,6 +59,7 @@
             <aside class="col-md-4" >
 
                 <p class="video-params">
+
                     發佈者：<b>{{ $video->author }}</b> <br />
                     建立日期：<b>{{ $video->updated_at	 }}</b> <br />
                     頻道：<b>{{ $video->category	 }}</b> <br />
@@ -122,7 +123,11 @@
                 </div>
 
 
+
                 <p class="button-full buttons-margin-horizontal" ><a href="/video/index/{{$video->category}}" class="btn btn-theme btn-green"><i class="fa fa-arrow-circle-left"></i> 返回頻道</a></p>
+
+                <p class="button-full buttons-margin-horizontal" ><a href="/video/index" class="btn btn-theme btn-green"><i class="fa fa-arrow-circle-left"></i> 返回</a></p>
+
 
             </aside>
         </div>

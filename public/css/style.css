@@ -80,7 +80,19 @@ ul.list-special li {color:#8B8B8B; }
 .video-title a:hover {color:#F97307; }
 .video-params {line-height:1.42857; }
 .video-params div[class^="col-md"] {padding-bottom:10px; font-size:14px; }
-.video-params b {/*color:#8B8B8B; font-weight:normal;*/ }
+.video-params b {/*color:#8B8B8B; font-weight:normal;*/}
+.video-category-params b {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #5bb75b;
+    color: #fff; }
 .video-params a {color:#565656; }
 .video-params a:hover {color:#F97307; }
 .videos-list-grid { } 
@@ -530,3 +542,71 @@ footer.main .footer-blog .footer {font-style:italic; font-size:12px; opacity:0.6
 /* Footer: Social */
 footer.main .footer-social a.btn-social {float:left; margin:0 12px 12px 0; color:#F8F8F8; }
 footer.main section.copyright {padding:20px 0; font-size:75%; background-color:rgba(138,165,193, 0.25); }
+
+
+/* tag color-category */
+.video-category-params b {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #5bb75b;
+    color: #fff;
+}
+
+.video-green-params b {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #009688;
+    color: #fff;
+}
+
+.video-bluepurple-params b {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #445ac7;
+    color: #fff;
+}
+
+.video-purple-params b {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #bb52c7;
+    color: #fff;
+}
+
+
+.video-gray-params b {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #565656;
+    color: #fff;
+}

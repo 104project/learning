@@ -14,5 +14,6 @@ class Videos_Likes extends Model
     protected  $fillable = [
         'user_id',
         'like_video_id',
+        'tag_color_id',
     ];
 }

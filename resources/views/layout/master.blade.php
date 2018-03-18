@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8" />
         <title>Learning - @yield('title')</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <!-- CSS Files -->
         <link rel="stylesheet" href="/plugin/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css" />

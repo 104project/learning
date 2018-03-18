@@ -16,6 +16,7 @@ class CreateVideocategoryTable extends Migration
         Schema::create('videocategory', function (Blueprint $table) {
             $table->increments('id'); //影片分類編號
             $table->string('tag',20); //分類標籤
+            $table->string('tag_color',20); //分類標籤(顏色)
             $table->timestamps();
         });
     }

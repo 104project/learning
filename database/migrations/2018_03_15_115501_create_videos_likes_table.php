@@ -17,6 +17,7 @@ class CreateVideosLikesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('like_video_id')->unsigned();
+            $table->integer('tag_color_id'); //分類標籤(顏色)
             $table->timestamps();
         });
     }

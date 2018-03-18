@@ -13,6 +13,5 @@ class VideoCategory extends Model
     // 可以大量指定異動的欄位（Mass Assignment）
     protected  $fillable = [
         'tag',
-        'tag_color',
     ];
 }

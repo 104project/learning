@@ -17,6 +17,7 @@
 Route::group(['prefix' => 'user'], function(){
     // 使用者驗證
     Route::group(['prefix' => 'auth'], function(){
+        Route::get('/account', 'UserAuthController@accountPage');
         Route::get('/sign-up', 'UserAuthController@signUpPage');
         Route::post('/sign-up', 'UserAuthController@signUpProcess');
         Route::get('/sign-in', 'UserAuthController@signInPage');
@@ -26,36 +27,30 @@ Route::group(['prefix' => 'user'], function(){
         Route::get('/facebook-sign-in', 'UserAuthController@facebookSignInProcess');
         // Facebook 登入重新導向授權資料處理
         Route::get('/facebook-sign-in-callback', 'UserAuthController@facebookSignInCallbackProcess');
+        // Google 登入
+        Route::get('/google-sign-in', 'UserAuthController@googleSignInProcess');
+        // Google 登入重新導向授權資料處理
+        Route::get('/google-sign-in-callback', 'UserAuthController@googleSignInCallbackProcess');
     });
-
-    //會員收藏影片
-    Route::get('/videos/collect/{user_id}', 'VideosController@user_collect_videosPage');
-    Route::get('/videos/likes/{user_id}', 'VideosController@user_likes_videosPage');
-    Route::get('/videos/subscribe/{user_id}', 'VideosController@user_subscribe_videosPage');
 });
 
 // 影片上傳
 Route::group(['prefix' => 'video'], function(){
     Route::group(['prefix' => 'index'], function(){
-        Route::get('{category_tag}','VideosController@video_area_categoryPage'); //影片頻道分類
-        Route::get('{category_tag}/{sort}','VideosController@video_area_sortPage'); //影片頻道分類+排序(按時間、瀏覽、喜愛)
+        Route::get('/', 'VideosController@video_areaPage');
+        Route::get('{category_tag}','VideosController@video_area_categoryPage');
+        Route::get('{category_tag}/{sort}','VideosController@video_area_sortPage'); //影片分類+排序
     });
-    //影片內容顯示
-    Route::get('/{category}/{id}', 'VideosController@videoPage');
+        Route::post('/add', 'VideosController@addProcess');
+        //會員新增喜愛影片 & 會員取消喜愛影片
+        Route::post('/{video_id}/like', 'VideosController@video_like');
+        Route::post('/{video_id}/dislike', 'VideosController@video_dislike');
 
-    //新增上傳影片
-    Route::post('/add', 'VideosController@addProcess');
+        //會員新增收藏影片 & 會員取消收藏影片
+        Route::post('/{video_id}/collect', 'VideosController@video_collect');
+        Route::post('/{video_id}/discollect', 'VideosController@video_discollect');
 
-    //會員新增喜愛影片 & 會員取消喜愛影片
-    Route::post('/{video_id}/like', 'VideosController@video_likeProcess');
-    Route::post('/{video_id}/dislike', 'VideosController@video_dislikeProcess');
-
-    //會員新增收藏影片 & 會員取消收藏影片
-    Route::post('/{video_id}/collect', 'VideosController@video_collectProcess');
-    //Route::post('/{video_id}/collect', 'VideosController@video_test');
-    Route::post('/{video_id}/discollect', 'VideosController@video_discollectProcess');
-
-
+        Route::get('/{category}/{id}', 'VideosController@video');
 });
 
 

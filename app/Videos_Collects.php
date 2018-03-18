@@ -14,6 +14,5 @@ class Videos_Collects extends Model
     protected  $fillable = [
         'user_id',
         'collect_video_id',
-        'tag_color_id',
     ];
 }

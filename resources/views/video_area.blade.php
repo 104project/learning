@@ -262,12 +262,9 @@
                                     Likes：<b>{{ $videos->likes_num }}</b>
                                 </div>
                             </div>
-                            @foreach($Category_color as $color)
-                            <div class="row video-{{$color->tag_color}}-params">
-                            @endforeach
+                            <div class="row video-params">
                                 <div class="col-md-12">
-                                    <b>#{{ $videos->category }}</b>
-
+                                    Category：<b>{{ $videos->category }}</b>
                                 </div>
                             </div>
 

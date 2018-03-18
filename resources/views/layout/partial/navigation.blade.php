@@ -50,7 +50,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #26abe2;"><span>Hi， {{ session('user_nickname')}}</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="/user/videos/collect/{{ session('user_id')}}">檢視</a></li>
+                            <li><a href="blog-post.htm">喜愛影片</a></li>
+                            <li><a href="blog-post.htm">檢視收藏</a></li>
                             <li><a href="/user/auth/sign-out">登出</a></li>
                         </ul>
                     </li>

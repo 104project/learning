@@ -17,7 +17,6 @@ class CreateVideosCollectsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('collect_video_id')->unsigned();
-            $table->integer('tag_color_id')->unsigned(); //分類標籤(顏色)
             $table->timestamps();
         });
     }
